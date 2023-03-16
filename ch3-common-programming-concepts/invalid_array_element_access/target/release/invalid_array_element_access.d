@@ -1,0 +1,1 @@
+/home/chris/Documents/projects/rust-tutorial/ch3-common-programming-concepts/invalid_array_element_access/target/release/invalid_array_element_access: /home/chris/Documents/projects/rust-tutorial/ch3-common-programming-concepts/invalid_array_element_access/src/main.rs
