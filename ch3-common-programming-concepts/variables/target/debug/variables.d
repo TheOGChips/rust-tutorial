@@ -1,0 +1,1 @@
+/home/chris/Documents/projects/rust-tutorial/ch3-common-programming-concepts/variables/target/debug/variables: /home/chris/Documents/projects/rust-tutorial/ch3-common-programming-concepts/variables/src/main.rs
