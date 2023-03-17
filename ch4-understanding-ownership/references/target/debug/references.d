@@ -1,0 +1,1 @@
+/home/chris/Documents/projects/rust-tutorial/ch4-understanding-ownership/references/target/debug/references: /home/chris/Documents/projects/rust-tutorial/ch4-understanding-ownership/references/src/main.rs
