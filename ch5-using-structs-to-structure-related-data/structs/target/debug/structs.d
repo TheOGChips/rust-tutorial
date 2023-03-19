@@ -1,0 +1,1 @@
+/home/chris/Documents/projects/rust-tutorial/ch5-using-structs-to-structure-related-data/structs/target/debug/structs: /home/chris/Documents/projects/rust-tutorial/ch5-using-structs-to-structure-related-data/structs/src/main.rs
