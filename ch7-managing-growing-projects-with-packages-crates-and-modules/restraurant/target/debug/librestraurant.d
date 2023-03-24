@@ -1,0 +1,1 @@
+/home/chris/Documents/projects/rust-tutorial/ch7-managing-growing-projects-with-packages-crates-and-modules/restraurant/target/debug/librestraurant.rlib: /home/chris/Documents/projects/rust-tutorial/ch7-managing-growing-projects-with-packages-crates-and-modules/restraurant/src/lib.rs
