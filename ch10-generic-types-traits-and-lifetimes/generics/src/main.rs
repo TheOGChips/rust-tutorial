@@ -51,12 +51,12 @@ fn main() {
     println!("p3.x: {}, p3.y: {}", p3.x(), p3.y)
 }
 
-fn largest<T> (list: &[T]) -> &T {
+fn largest<T: PartialOrd> (list: &[T]) -> &T {
     let mut largest: &T = &list[0];
-    /*for item in list {
+    for item in list {
         if item > largest {
             largest = item;
         }
-    }*/
+    }
     return largest;
 }
