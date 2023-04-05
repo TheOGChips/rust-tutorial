@@ -1,0 +1,1 @@
+/home/chris/Documents/projects/rust-tutorial/ch10-generic-types-traits-and-lifetimes/extract_func/target/debug/extract_func: /home/chris/Documents/projects/rust-tutorial/ch10-generic-types-traits-and-lifetimes/extract_func/src/main.rs
