@@ -1,0 +1,1 @@
+/home/chris/Documents/projects/rust-tutorial/ch10-generic-types-traits-and-lifetimes/generics/target/debug/generics: /home/chris/Documents/projects/rust-tutorial/ch10-generic-types-traits-and-lifetimes/generics/src/main.rs
