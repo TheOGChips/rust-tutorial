@@ -1,0 +1,1 @@
+/Users/chris/Documents/rust-tutorial/ch13-functional-language-features-iterators-and-closures/closures/target/debug/closures: /Users/chris/Documents/rust-tutorial/ch13-functional-language-features-iterators-and-closures/closures/src/main.rs
