@@ -1,0 +1,1 @@
+/Users/chris/Documents/rust-tutorial/ch12-an-IO-project-building-a-command-line-program/minigrep/target/debug/libminigrep.rlib: /Users/chris/Documents/rust-tutorial/ch12-an-IO-project-building-a-command-line-program/minigrep/src/lib.rs
