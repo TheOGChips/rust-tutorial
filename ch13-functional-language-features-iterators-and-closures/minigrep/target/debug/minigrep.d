@@ -1,0 +1,1 @@
+/Users/chris/Documents/rust-tutorial/ch13-functional-language-features-iterators-and-closures/minigrep/target/debug/minigrep: /Users/chris/Documents/rust-tutorial/ch13-functional-language-features-iterators-and-closures/minigrep/src/lib.rs /Users/chris/Documents/rust-tutorial/ch13-functional-language-features-iterators-and-closures/minigrep/src/main.rs
