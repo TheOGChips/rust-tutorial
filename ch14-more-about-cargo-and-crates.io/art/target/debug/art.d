@@ -1,0 +1,1 @@
+/Users/chris/Documents/rust-tutorial/ch14-more-about-cargo-and-crates.io/art/target/debug/art: /Users/chris/Documents/rust-tutorial/ch14-more-about-cargo-and-crates.io/art/src/lib.rs /Users/chris/Documents/rust-tutorial/ch14-more-about-cargo-and-crates.io/art/src/main.rs
