@@ -1,0 +1,1 @@
+/Users/chris/Documents/rust-tutorial/ch17-oop-features-of-rust/blog/target/debug/blog: /Users/chris/Documents/rust-tutorial/ch17-oop-features-of-rust/blog/src/lib.rs /Users/chris/Documents/rust-tutorial/ch17-oop-features-of-rust/blog/src/main.rs
