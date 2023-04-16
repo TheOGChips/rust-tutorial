@@ -1,0 +1,1 @@
+/Users/chris/Documents/rust-tutorial/ch19-advanced-features/pancakes/target/debug/pancakes: /Users/chris/Documents/rust-tutorial/ch19-advanced-features/hello_macro/hello_macro_derive/src/lib.rs /Users/chris/Documents/rust-tutorial/ch19-advanced-features/hello_macro/src/lib.rs /Users/chris/Documents/rust-tutorial/ch19-advanced-features/pancakes/src/main.rs
