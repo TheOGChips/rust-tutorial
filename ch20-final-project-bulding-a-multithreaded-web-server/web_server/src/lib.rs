@@ -4,16 +4,17 @@ use std::{
             channel,
             Sender,
             Receiver,
+            RecvError,
         },
         Arc,
         Mutex,
     },
-    thread
+    thread,
 };
 
 pub struct ThreadPool {
     threads: Vec<Worker>,
-    sender: Sender<Job>,
+    sender: Option<Sender<Job>>,
 }
 
 impl ThreadPool {
@@ -40,27 +41,42 @@ impl ThreadPool {
         }
         return ThreadPool {
             threads: threads,
-            sender: sender,
+            sender: Some(sender),
         };
     }
 
     pub fn execute<F> (&self, f: F)
     where F: FnOnce() + Send + 'static {
         let job: Job = Box::new(f);
-        self.sender.send(job).unwrap();
+        self.sender.as_ref().unwrap().send(job).unwrap();
+    }
+}
+
+impl Drop for ThreadPool {
+    fn drop (&mut self) {
+        drop(self.sender.take());
+        for thread in &mut self.threads {
+            println!("Shutting down worker {}", thread.id);
+            if let Some(handler) = thread.handler.take() {
+                /* NOTE: take() takes the Some variant out and
+                 *       replaces it with a None
+                 */
+                handler.join().unwrap();
+            }
+        }
     }
 }
 
 struct Worker {
     id: usize,
-    handler: thread::JoinHandle<()>,
+    handler: Option<thread::JoinHandle<()>>,
 }
 
 impl Worker {
     fn new (id: usize, receiver: Arc<Mutex<Receiver<Job>>>) -> Worker {
         return Worker {
             id: id,
-            handler: thread::spawn(move || loop {
+            handler: Some(thread::spawn(move || loop {
                 /* NOTE: A while let loop is not used here because
                  *       it does not work as expected due to the
                  *       lifetime of the MutexGuard<T> returned by
@@ -69,13 +85,20 @@ impl Worker {
                  *       duration of the loop iteration instead,
                  *       which is not desirable.
                  */
-                let job: Job = receiver.lock()
+                let msg: Result<Job, RecvError> = receiver.lock()
                     .expect("Could not acquire lock...")
-                    .recv()
-                    .unwrap();
-                println!("Worker {id} got a job; executing.");
-                job();  //NOTE: job is a closure, hence the "()"
-            }),
+                    .recv();
+                match msg {
+                    Ok(job) => {
+                        println!("Worker {id} got a job; executing.");
+                        job();  //NOTE: job is a closure, hence the "()"
+                    },
+                    Err(_) => {
+                        println!("Worker {id} disconnected; shutting down.");
+                        break;
+                    }
+                }
+            })),
         };
     }
 }
