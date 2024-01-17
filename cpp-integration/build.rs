@@ -44,6 +44,8 @@ fn main() {
         }
 
     let bindings = bindgen::Builder::default()
+        .opaque_type("std::.*")
+        .allowlist_type("struct_t")
         .header(headers_path)
         .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
         .generate()
